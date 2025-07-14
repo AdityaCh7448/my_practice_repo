@@ -1,0 +1,38 @@
+# Local .terraform directories
+.terraform/
+
+# Terraform state files
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+*.tfstate.*
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Variable files with secrets
+*.tfvars
+!example.tfvars     # Keep example tfvars if needed for documentation
+
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive plan output
+terraform.tfplan
+
+# Ignore .DS_Store and other OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor & IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
