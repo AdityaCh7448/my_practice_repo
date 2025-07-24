@@ -40,4 +40,26 @@ variable "container_name" {
   description = "This is container name"
 }
 
+# Key Vault variables
 
+variable "akv_name" {
+  type = string
+  description = "This is key vault name"
+}
+variable "enabled_for_disk_encryption-akv1" {
+  type = bool
+  description = "enabled for disk encryption settings true or false"
+}
+variable "soft_delete_retention_days-akv" {
+  type = number
+  description = "Soft delete retention days"
+}
+variable "purge_protection_enabled-akv" {
+  type = bool
+  description = "purge protection settings"
+}
+
+variable "sku-akv" {
+  type = string
+  description = "This is sku setting for akv"
+}
