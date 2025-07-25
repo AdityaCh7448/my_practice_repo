@@ -16,9 +16,9 @@ resource "azurerm_storage_account" "demoastorage" {
   public_network_access_enabled = var.network_access-stg
 }
 
-resource "azurerm_storage_container" "backend-stg-container" {
+resource "azurerm_storage_container" "demoastorage-stg-container" {
   name                  = var.container_name
-  storage_account_id    = azurerm_storage_account.backend-storage.id
+  storage_account_id    = azurerm_storage_account.demoastorage.id
 }
 
 # Create Azure KeyVault #
@@ -31,4 +31,17 @@ resource "azurerm_key_vault" "azureakv36" {
   soft_delete_retention_days  = var.soft_delete_retention_days-akv
   purge_protection_enabled    = var.purge_protection_enabled-akv
   sku_name = var.sku-akv
+}
+resource "azurerm_key_vault_access_policy" "keyvault-access-policy" {
+  key_vault_id = azurerm_key_vault.azureakv36.id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = data.azurerm_client_config.current.object_id
+
+  key_permissions = [
+    "Get",
+  ]
+
+  secret_permissions = [
+    "Get",
+  ]
 }
