@@ -63,3 +63,10 @@ variable "sku-akv" {
   type = string
   description = "This is sku setting for akv"
 }
+
+# ADF configuration variables #
+
+variable "variablemyadf101aditya" {
+  type = string
+  description = "This is name of adf"
+}

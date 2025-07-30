@@ -45,3 +45,12 @@ resource "azurerm_key_vault_access_policy" "keyvault-access-policy" {
     "Get",
   ]
 }
+
+# Create azure data factory #
+resource "azurerm_data_factory" "myadf101aditya" {
+  name                = var.variablemyadf101aditya
+  location            = azurerm_resource_group.my_lab_rg1.location
+  resource_group_name = azurerm_resource_group.my_lab_rg1.name
+  managed_virtual_network_enabled = false
+  public_network_enabled = false
+}

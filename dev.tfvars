@@ -16,3 +16,6 @@ enabled_for_disk_encryption-akv1 = true
 purge_protection_enabled-akv = true
 soft_delete_retention_days-akv = 30
 sku-akv = "standard"
+
+# ADF configuration values
+variablemyadf101aditya = "myadf101aditya"
