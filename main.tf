@@ -6,7 +6,7 @@ resource "azurerm_resource_group" "my_lab_rg1" {
 
 # Create Storage account for Backend Configuration #
 
-resource "azurerm_storage_account" "demoastorage" {
+resource "azurerm_storage_account" "demoaastorage459" {
   name                     = var.stg-name
   resource_group_name      = azurerm_resource_group.my_lab_rg1.name
   location                 = azurerm_resource_group.my_lab_rg1.location
@@ -16,13 +16,13 @@ resource "azurerm_storage_account" "demoastorage" {
   public_network_access_enabled = var.network_access-stg
 }
 
-resource "azurerm_storage_container" "demoastorage-stg-container" {
+resource "azurerm_storage_container" "demoastorage459-stg-container" {
   name                  = var.container_name
-  storage_account_id    = azurerm_storage_account.demoastorage.id
+  storage_account_id    = azurerm_storage_account.demoaastorage459.id
 }
 
 # Create Azure KeyVault #
-resource "azurerm_key_vault" "azureakv36" {
+resource "azurerm_key_vault" "azureakv3694" {
   name                        = var.akv_name
   location                    = azurerm_resource_group.my_lab_rg1.location
   resource_group_name         = azurerm_resource_group.my_lab_rg1.name
@@ -33,7 +33,7 @@ resource "azurerm_key_vault" "azureakv36" {
   sku_name = var.sku-akv
 }
 resource "azurerm_key_vault_access_policy" "keyvault-access-policy" {
-  key_vault_id = azurerm_key_vault.azureakv36.id
+  key_vault_id = azurerm_key_vault.azureakv3694.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
   object_id    = data.azurerm_client_config.current.object_id
 
